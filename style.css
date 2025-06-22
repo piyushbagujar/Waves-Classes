@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  width: 100vw;
+}
+
+/* Parallax background */
+.parallax-bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url(./assets/logo-removebg-preview.png);
+  background-repeat: repeat;
+  background-size: 6rem;
+  transform: rotate(-30deg);
+  z-index: -1;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 6.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+  background-color: rgba(242, 242, 242, 0.259);
+}
+
+.logo {
+  height: 7vw;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2vw;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  border-bottom: 1px solid black;
+}
+
+/* Home */
+.home {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.text-content {
+  position: relative;
+  top: 25%;
+  left: 23%;
+  padding: 4vw 3vw;
+}
+
+.typing-text {
+  font-size: 6vw;
+  font-weight: 200;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #111;
+  width: 0;
+  letter-spacing: 1px;
+  animation: typing 3s steps(20) 1s 1 normal both, blink 0.7s step-end infinite;
+  background-color: yellow;
+  text-transform: uppercase;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.spantag {
+  font-weight: 600;
+  padding: 0 1vw;
+  background-color: black;
+  color: #fff;
+}
+
+.tagline {
+  margin-top: 1.7vw;
+  font-size: 2vw;
+  color: #0E2148;
+  margin-left: 1vw;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 4s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Home spacer */
+.home-spacer {
+  height: 100vh;
+  background: transparent;
+}
+
+/* About Section */
+.about {
+  width: 100%;
+  background: orange;
+  padding: 3.2vw ;
+  position: relative;
+  border-top-left-radius: 5vw;
+  border-top-right-radius: 5vw;
+  z-index: 1;
+}
+
+
+.about-heading {
+  font-size: 4vw;
+  font-weight: 800;
+  color: #0e2148;
+  text-align: center;
+  margin-bottom: 3vw;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-heading span {
+  color: #fff;
+  background-color: #0e2148;
+  padding: 0 1vw;
+  border-radius: 0.5vw;
+  font-weight: 700;
+}
+
+.about-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw;
+  padding: 5vw 2vw;
+}
+
+.about-left {
+  width: 45%;
+  perspective: 1000px;
+}
+
+.about-left img {
+  width: 100%;
+  border-radius: 2vw;
+  padding: 1vw;
+  background-color: #fff8ee;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: rotateY(2deg);
+  transition: transform 0.3s ease;
+  border-left: 6px solid #fff;
+}
+
+.about-left img:hover {
+  transform: scale(1.03) rotateY(0deg);
+}
+
+.about-right {
+  width: 50%;
+  background: #fffef8;
+  padding: 3vw;
+  border-radius: 1.5vw;
+  font-size: 1.15vw;
+  line-height: 2;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid #ff6a00;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-right::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 80%);
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+.about-right * {
+  position: relative;
+  z-index: 1;
+}
+
+.director-title {
+  font-size: 2.2vw;
+  color: #0e2148;
+  margin-bottom: 1.5vw;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.highlight {
+  background-color: #ffddb3;
+  padding: 0.2vw 0.6vw;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #d35400;
+  font-size: 1vw;
+}
+/* courses Section */
+.courses {
+  width: 100vw;
+  background: #fff0e5;
+  padding: 6vw 3vw;
+  border-top-left-radius: 5vw;
+  border-top-right-radius: 5vw;
+  position: relative;
+  z-index: 2;
+}
+
+.courses h1 {
+  font-size: 4vw;
+  text-align: center;
+  font-weight: 700;
+  color: #0E2148;
+  margin-bottom: 4vw;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.courses h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #ff7b00;
+  border-radius: 2px;
+}
+
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3vw;
+}
+
+.course-card {
+  width: 42vw;
+  background: linear-gradient(to bottom right, #ffffffcc, #ffe0c7cc);
+  border-radius: 2vw;
+  padding: 2vw;
+  box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.course-card:hover {
+  transform: translateY(-1vw) scale(1.02);
+  box-shadow: 0 1vw 3vw rgba(255, 106, 0, 0.3);
+}
+
+.course-card img {
+  width: 100%;
+  height: 14vw;
+  object-fit: cover;
+  border-radius: 1.5vw;
+  margin-bottom: 1.5vw;
+}
+
+.course-info h2 {
+  font-size: 2vw;
+  color: #0e2148;
+  font-weight: 700;
+  margin-bottom: 1vw;
+  text-align: center;
+}
+
+.course-info p {
+  font-size: 1.1vw;
+  text-align: center;
+  color: #444;
+  margin-bottom: 2vw;
+}
+
+.course-info button {
+  background: linear-gradient(to right, #ff6a00, #ff9300);
+  border: none;
+  color: white;
+  padding: 1vw 2vw;
+  border-radius: 1vw;
+  font-size: 1.1vw;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.course-info button:hover {
+  transform: scale(1.05);
+  background-color: #e05500;
+}
+
+
+
