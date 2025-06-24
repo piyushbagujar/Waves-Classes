@@ -175,3 +175,15 @@ gsap.utils.toArray(".swiper-slide").forEach((slide, index) => {
     }
   );
 });
+// Simple GSAP animation for YouTube section heading
+gsap.from(".youtube-videos h1", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".youtube-videos h1",
+    start: "top 90%",
+    toggleActions: "play none none reverse"
+  }
+});
