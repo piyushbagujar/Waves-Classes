@@ -129,4 +129,49 @@ gsap.from(".courses h1", {
 });
 
 
+const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
 
+
+// Animate each YouTube slide individually
+gsap.utils.toArray(".swiper-slide").forEach((slide, index) => {
+  gsap.fromTo(
+    slide,
+    {
+      opacity: 0,
+      y: 100,
+      scale: 0.85,
+      rotateX: -15,
+      transformOrigin: "center center",
+    },
+    {
+      scrollTrigger: {
+        trigger: slide,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotateX: 0,
+      duration: 1.2,
+      ease: "power4.out",
+      delay: index * 0.1,
+    }
+  );
+});
