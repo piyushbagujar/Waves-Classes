@@ -111,7 +111,6 @@ gsap.from(".courses", {
   scrollTrigger: {
     trigger: ".courses",
     start: "top 95%",
-    markers:true,
     toggleActions: "play none none reverse"
   }
 });
