@@ -76,18 +76,18 @@ gsap.from('.about-right', {
 });
 
 // ABOUT SECTION ENTRANCE
-gsap.from(".about", {
-  y: 100,
-  opacity: 0,
-  duration: 1,
-  ease: "power3.out",
-  scrollTrigger: {
-    trigger: ".about",
-    start: "top 90%",
-    end: "top 60%",
-    toggleActions: "play none none reverse"
-  }
-});
+// gsap.from(".about", {
+//   y: 100,
+//   opacity: 0,
+//   duration: 1,
+//   ease: "power3.out",
+//   scrollTrigger: {
+//     trigger: ".about",
+//     start: "top 90%",
+//     end: "top 60%",
+//     toggleActions: "play none none reverse"
+//   }
+// });
 
 
 // ✅ Fixing the pin jitter by restructuring scroll + pin logic
@@ -95,13 +95,10 @@ gsap.to(".about", {
   scrollTrigger: {
     trigger: ".about",
     start: "top 0%",
-    end: "-100%",
-    pin: true,
-    pinSpacing: false,
-    markers:true
+    end: "-100%"
     
   },
-  y:150
+  y:100
 
 });
 
@@ -113,7 +110,8 @@ gsap.from(".courses", {
   ease: "power4.out",
   scrollTrigger: {
     trigger: ".courses",
-    start: "top 85%",
+    start: "top 95%",
+    markers:true,
     toggleActions: "play none none reverse"
   }
 });
