@@ -1,0 +1,291 @@
+/* 📱 FULLY RESPONSIVE MOBILE + TABLET VIEW CSS */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .navbar {
+    height: 14vw;
+    padding: 0 5vw;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .logo {
+    height: 11vw;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #111;
+    border-radius: 3px;
+  }
+
+  .nav-links.mobile-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 14vw;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 4vw 0;
+    z-index: 1000;
+    text-align: center;
+    gap: 3vw;
+  }
+
+  .nav-links.mobile-active a {
+    font-size: 5vw;
+    color: #111;
+    font-weight: 600;
+  }
+
+  .home {
+    height: 85vh;
+  }
+
+  .text-content {
+    top: 35%;
+    left: 8%;
+    padding: 2vw;
+  }
+
+  .typing-text {
+    font-size: 9vw;
+    width: 100%;
+  }
+
+  .tagline {
+    font-size: 4.5vw;
+    margin-top: 4vw;
+    margin-left: 1vw;
+  }
+
+  .why-waves {
+    padding: 10vw 5vw;
+    border-top-left-radius: 8vw;
+    border-top-right-radius: 8vw;
+  }
+
+  .why-heading {
+    font-size: 6vw;
+    margin-bottom: 5vw;
+  }
+
+  .why-description {
+    font-size: 3.5vw;
+    margin-bottom: 6vw;
+  }
+
+  .why-features {
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  .feature-card {
+    width: 100%;
+    padding: 6vw 4vw;
+    border-radius: 4vw;
+  }
+
+  .icon-circle {
+    width: 14vw;
+    height: 14vw;
+  }
+
+  .feature-card h3 {
+    font-size: 5vw;
+    margin-bottom: 3vw;
+  }
+
+  .feature-card p {
+    font-size: 3.8vw;
+  }
+
+  .about {
+    padding: 10vw 5vw;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 6vw;
+    padding: 0;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
+
+  .about-left img {
+    padding: 3vw;
+    border-radius: 4vw;
+  }
+
+  .about-right {
+    font-size: 3.5vw;
+    padding: 6vw;
+    border-left: 4px solid #ff6a00;
+    border-radius: 4vw;
+  }
+
+  .director-title {
+    font-size: 6vw;
+    margin-bottom: 4vw;
+  }
+
+  .highlight {
+    font-size: 3.8vw;
+    padding: 1vw 3vw;
+  }
+
+  .courses {
+    padding: 10vw 5vw;
+  }
+
+  .course-grid {
+    flex-direction: column;
+    gap: 6vw;
+  }
+
+  .course-card {
+    width: 100%;
+    padding: 6vw;
+    border-radius: 4vw;
+  }
+
+  .course-card img {
+    height: 40vw;
+    border-radius: 3vw;
+  }
+
+  .course-info h2 {
+    font-size: 5.5vw;
+  }
+
+  .course-info p {
+    font-size: 3.8vw;
+    margin-bottom: 3vw;
+  }
+
+  .course-info button {
+    font-size: 4vw;
+    padding: 2vw 4vw;
+    border-radius: 2vw;
+  }
+
+  .results-wrapper {
+    padding: 10vw 5vw;
+  }
+
+  .results-heading {
+    font-size: 6vw;
+    margin-bottom: 5vw;
+  }
+
+  .result-card {
+    width: 100%;
+    padding: 6vw;
+    border-radius: 4vw;
+  }
+
+  .image-wrapper {
+    height: 45vw;
+  }
+
+  .result-card h3 {
+    font-size: 5vw;
+  }
+
+  .result-card p {
+    font-size: 3.5vw;
+  }
+
+  .results-wrapper .swiper-pagination-bullet {
+    width: 2vw;
+    height: 2vw;
+  }
+
+  .testimonial-heading {
+    font-size: 6vw;
+    margin-bottom: 5vw;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    padding: 6vw;
+    border-radius: 4vw;
+  }
+
+  .testimonial-text {
+    font-size: 4vw;
+  }
+
+  .testimonial-card h4 {
+    font-size: 4vw;
+  }
+
+  .youtube-videos {
+    padding: 10vw 5vw;
+  }
+
+  .youtube-videos .testimonial-heading {
+    font-size: 6vw;
+    margin-bottom: 5vw;
+  }
+
+  .swiper-slide iframe {
+    max-width: 95vw;
+    border-radius: 2vw;
+    border: 3px solid #fff;
+  }
+
+  .contact-section {
+    padding: 10vw 5vw;
+  }
+
+  .contact-heading {
+    font-size: 6vw;
+    margin-bottom: 5vw;
+  }
+
+  .contact-description {
+    font-size: 4vw;
+  }
+
+  .contact-box {
+    width: 100%;
+    padding: 6vw;
+    border-radius: 4vw;
+  }
+
+  .contact-box img {
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .contact-box p {
+    font-size: 4vw;
+  }
+
+  .site-footer {
+    font-size: 4vw;
+    padding: 6vw 3vw;
+  }
+
+}
