@@ -81,7 +81,7 @@ gsap.from(".results-heading", {
     trigger: ".results-heading",
     start: "top 85%",
     toggleActions: "play none none reverse",
-  }
+  },
 });
 
 // Animate Video Gallery Heading
@@ -154,7 +154,7 @@ const mainSwiper = new Swiper(".mySwiper", {
 // Swiper for Results Section
 const resultsSwiper = new Swiper(".results-swiper", {
   slidesPerView: 1.2,
-  spaceBetween:40,
+  spaceBetween: 40,
   loop: true,
   centeredSlides: true,
   autoplay: {
@@ -174,7 +174,6 @@ const resultsSwiper = new Swiper(".results-swiper", {
     },
   },
 });
-
 
 gsap.utils.toArray(".swiper-slide").forEach((card, i) => {
   gsap.fromTo(
@@ -216,7 +215,7 @@ gsap.to(".testimonial-card", {
   scrollTrigger: {
     trigger: ".testimonial-container",
     start: "top 80%",
-    toggleActions: "play none none none",
+    toggleActions: "play none none reverse",
   },
 });
 gsap.registerPlugin(ScrollTrigger);
@@ -226,12 +225,12 @@ gsap.from(".testimonial-heading", {
   scrollTrigger: {
     trigger: ".testimonial-heading",
     start: "top 80%",
-    toggleActions: "play none none none"
+    toggleActions: "play none none none",
   },
   y: 50,
   opacity: 0,
   duration: 1,
-  ease: "power3.out"
+  ease: "power3.out",
 });
 const letters = document.querySelectorAll(".testimonial-heading span");
 
@@ -244,10 +243,8 @@ gsap.from(letters, {
   opacity: 0,
   stagger: 0.1,
   ease: "back.out(1.7)",
-  duration: 1
+  duration: 1,
 });
-
-
 
 gsap.from(".contact-box", {
   y: 5,
@@ -264,60 +261,63 @@ const mobileMenu = document.getElementById("mobileMenu");
 const closeBtn = document.getElementById("closeBtn");
 const mobileLinks = document.querySelectorAll(".mobile-link");
 
-// Open mobile menu with GSAP
+// Timeline for menu open animation
+const menuTimeline = gsap.timeline({ paused: true });
+
+menuTimeline
+  .fromTo(
+    mobileMenu,
+    { y: "-100%", opacity: 0 },
+    { y: "0%", opacity: 1, duration: 0.6, ease: "power4.out" }
+  )
+  .from(
+    ".mobile-link",
+    {
+      opacity: 0,
+      y: 30,
+      stagger: 0.1,
+      duration: 0.4,
+      ease: "back.out(1.7)",
+    },
+    "-=0.3"
+  );
+
+// Open menu
 hamburger.addEventListener("click", () => {
   hamburger.classList.add("active");
   mobileMenu.classList.add("show");
-
-  gsap.fromTo(
-    mobileMenu,
-    { opacity: 0, y: -30 },
-    { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
-  );
-
-  gsap.from(".mobile-link", {
-    opacity: 0,
-    y: 20,
-    stagger: 0.1,
-    duration: 0.4,
-    ease: "power2.out",
-  });
+  menuTimeline.restart();
 });
 
-// Close menu via close button
-closeBtn.addEventListener("click", () => {
+// Close menu function
+function closeMobileMenu() {
   gsap.to(mobileMenu, {
+    y: "-100%",
     opacity: 0,
-    duration: 0.3,
-    ease: "power2.in",
+    duration: 0.4,
+    ease: "power2.inOut",
     onComplete: () => {
       mobileMenu.classList.remove("show");
       hamburger.classList.remove("active");
-    }
+    },
   });
+}
+
+// Close when clicking the close button
+closeBtn.addEventListener("click", closeMobileMenu);
+
+// Close when clicking a menu link
+mobileLinks.forEach((link) => {
+  link.addEventListener("click", closeMobileMenu);
 });
 
-// Close menu when clicking any link
-mobileLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    gsap.to(mobileMenu, {
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.in",
-      onComplete: () => {
-        mobileMenu.classList.remove("show");
-        hamburger.classList.remove("active");
-      }
-    });
-  });
-});
-
-// Optional ScrollTrigger Animations (for content fade-in)
-gsap.utils.toArray(".fade-in").forEach(el => {
+// Optional: Scroll-based fade-in animations
+gsap.utils.toArray(".fade-in").forEach((el) => {
   gsap.from(el, {
     scrollTrigger: {
       trigger: el,
       start: "top 80%",
+      toggleActions: "play none none none",
     },
     opacity: 0,
     y: 40,
