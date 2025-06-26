@@ -1,3 +1,11 @@
+// Minimal version
+window.onload = function() {
+  window.scrollTo(0, 0);
+  if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+  }
+};
+
 // Register GSAP Plugin
 gsap.registerPlugin(ScrollTrigger);
 

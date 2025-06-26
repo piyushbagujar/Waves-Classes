@@ -453,13 +453,6 @@ body {
   overflow: hidden;
 }
 
-.results-heading {
-  font-size: 3.5vw;
-  margin-bottom: 3vw;
-  color: #0e2148;
-  font-weight: 600;
-}
-
 .results-highlight {
   color: #ff7b00;
 }
@@ -711,12 +704,6 @@ body {
   border-top-right-radius: 5vw;
 }
 
-.contact-heading {
-  font-size: 4vw;
-  font-weight: 700;
-  color: #13377e;
-  margin-bottom: 2vw;
-}
 
 .contact-description {
   font-size: 2vw;
@@ -921,123 +908,5 @@ body {
    	border-radius: 2vw;
    	border: 3px solid #fff;
   } * } */
-html {
-  scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* ------------------- HAMBURGER ICON ------------------- */
-.hamburger {
-  display: none; /* Hidden by default */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 22px;
-  padding: 5px 0px;
-  cursor: pointer;
-  z-index: 1001;
-  transition: transform 0.3s ease-in-out;
-}
-
-.hamburger span {
-  height: 3px;
-  width: 100%;
-  background-color: #ffd700; /* Waves Yellow */
-  border-radius: 2px;
-  display: block;
-  transition: all 0.4s ease;
-}
-
-.hamburger.active .bar1 {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active .bar2 {
-  opacity: 0;
-}
-
-.hamburger.active .bar3 {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* ------------------- MOBILE MENU OVERLAY ------------------- */
-.mobile-menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(231, 240, 252, 0.95); /* Light theme blue */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Safari */
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  transition: all 0.4s ease-in-out;
-  padding: 1rem;
-}
-
-.mobile-menu-overlay.show {
-  display: flex;
-}
-
-/* ------------------- MOBILE NAV LINKS ------------------- */
-.mobile-nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  text-align: center;
-}
-
-.mobile-link {
-  color: #003566; /* Deep Navy */
-  font-size: 1.8rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.mobile-link:hover {
-  color: #ef8f09;
-  transform: scale(1.05);
-}
-
-/* ------------------- CLOSE BUTTON ------------------- */
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 2.5rem;
-  color: #003566;
-  cursor: pointer;
-  font-weight: 600;
-  z-index: 1002;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.close-btn:hover {
-  transform: scale(1.2);
-  color: #ef8f09;
-}
-
-/* ------------------- DESKTOP NAVIGATION ------------------- */
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-/* ------------------- RESPONSIVE RULES ------------------- */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    justify-content: end;
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-links {
-    display: none;
-  }
-}
+/* Global */
+/* Global */
