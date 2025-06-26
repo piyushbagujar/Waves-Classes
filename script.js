@@ -333,3 +333,107 @@ gsap.utils.toArray(".fade-in").forEach((el) => {
     ease: "power2.out",
   });
 });
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Video Swiper with autoplay
+  const videoSwiper = new Swiper('.videoSwiper', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.videoSwiper .swiper-button-next',
+      prevEl: '.videoSwiper .swiper-button-prev',
+    },
+    pagination: {
+      el: '.videoSwiper .swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  // Initialize Photo Swiper with autoplay
+  const photoSwiper = new Swiper('.photoSwiper', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.photoSwiper .swiper-button-next',
+      prevEl: '.photoSwiper .swiper-button-prev',
+    },
+    pagination: {
+      el: '.photoSwiper .swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  // Fullscreen functionality
+  const fullscreenOverlay = document.querySelector('.fullscreen-overlay');
+  const fullscreenImage = document.querySelector('.fullscreen-image');
+  const fullscreenCaption = document.querySelector('.fullscreen-caption');
+  const closeBtn = document.querySelector('.close-fullscreen');
+  
+  // Get all gallery items
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
+  galleryItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const imgSrc = this.querySelector('img').src;
+      const captionTitle = this.querySelector('h3').textContent;
+      const captionText = this.querySelector('p').textContent;
+      
+      fullscreenImage.src = imgSrc;
+      fullscreenImage.alt = this.querySelector('img').alt;
+      fullscreenCaption.querySelector('h3').textContent = captionTitle;
+      fullscreenCaption.querySelector('p').textContent = captionText;
+      
+      fullscreenOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // Close fullscreen
+  closeBtn.addEventListener('click', function() {
+    fullscreenOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  
+  // Close when clicking outside image
+  fullscreenOverlay.addEventListener('click', function(e) {
+    if (e.target === fullscreenOverlay) {
+      fullscreenOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Close with ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && fullscreenOverlay.classList.contains('active')) {
+      fullscreenOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const viewMoreBtn = document.getElementById('viewMoreBtn');
+  const facultyGrid = document.getElementById('facultyGrid');
+  
+  viewMoreBtn.addEventListener('click', function() {
+    facultyGrid.classList.toggle('show-all');
+    this.classList.toggle('active');
+    
+    if (this.classList.contains('active')) {
+      this.innerHTML = 'Show Less Faculty <i class="fas fa-chevron-up"></i>';
+    } else {
+      this.innerHTML = 'View More Faculty <i class="fas fa-chevron-down"></i>';
+    }
+  });
+});
